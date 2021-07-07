@@ -77,12 +77,15 @@ created(){
   show(){
     this.autoCompleteList='';
     if(this.city !=''){
+      if(this.city.length==1){
+         this.city=this.city[0].toUpperCase() 
+      }else{
       this.city=this.city[0].toUpperCase() + this.city.substring(1).toLowerCase();
            
           this.autoCompleteList=this.autoComplete.filter((element)=>{
            return element.includes(this.city);
           })
-         
+      }
         }      
       }
   
